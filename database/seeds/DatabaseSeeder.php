@@ -11,6 +11,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
+        $tables = DB::select('SHOW TABLES');
+        foreach ($tables as $table) {
+            if ($table->Tables_in_cv !== 'migrations')
+                DB::table($table->Tables_in_cv)->truncate();
+        }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
+
+        $this->call(UsersTableSeeder::class);
+        $this->call(SkillsTableSeeder::class);
+        $this->call(SkillUserTableSeeder::class);
+        $this->call(ExperiencesTableSeeder::class);
+        $this->call(EducationsTableSeeder::class);
     }
 }
