@@ -11,8 +11,5 @@
 |
 */
 
-Route::get('view', function () {
-    return view('welcome');
-});
-
-Route::get('index', 'FrontController@index');
+Route::get('/', 'FrontController@index');
+Route::get('admin', 'FrontController@admin');

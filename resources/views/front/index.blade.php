@@ -17,7 +17,6 @@
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Creative CV</a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
@@ -41,8 +40,9 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="images/anthony.jpg" alt="Image"/></a></div>
-          <div class="h2 title">Anthony Barnett</div>
-          <p class="category text-white">Web Developer, Graphic Designer,  Photographer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <div class="h2 title">{{$user->name}}</div>
+          <p class="category text-white">Web Developer</p>
+          <a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
       <div class="section">
@@ -60,28 +60,27 @@
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">Objetivo professional</div>
-            <p>Hello! I am Anthony Barnett. Web Developer, Graphic Designer and Photographer.</p>
-            <p>Creative CV is a HTML resume template for professionals. Built with Bootstrap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skills and experience.</p>
+            <p>{{$user->objetive}}</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
+            <div class="h4 mt-0 title">Información básica</div>
             <div class="row">
               <div class="col-sm-4"><strong class="text-uppercase">Edad:</strong></div>
-              <div class="col-sm-8">24</div>
+              <div class="col-sm-8">{{$user->birthdate->age}}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">anthony@company.com</div>
+              <div class="col-sm-8">{{$user->email}}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Teléfono:</strong></div>
-              <div class="col-sm-8">+1718-111-0011</div>
+              <div class="col-sm-8">{{$user->phone}}</div>
             </div>
             <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Dirección:</strong></div>
-              <div class="col-sm-8">140, City Center, New York, U.S.A</div>
+              <div class="col-sm-4"><strong class="text-uppercase">Ciudad:</strong></div>
+              <div class="col-sm-8">{{$user->address}}</div>
             </div>
           </div>
         </div>
@@ -94,165 +93,74 @@
     <div class="h4 text-center mb-4 title">Skills</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
+          @foreach(array_chunk($skills, 2) as $skill)
+          <div class="row">
+              @foreach($skill as $data)
+                  <div class="col-md-6">
+                      <div class="progress-container progress-primary"><span class="progress-badge">{{$data['name']}}</span>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{$data['pivot']['level']}}%;"></div><span class="progress-value">{{$data['pivot']['level']}}%</span>
+                        </div>
+                      </div>
+                  </div>
+              @endforeach
+              </div>
+          @endforeach
         <div class="row">
           <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">HTML</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">CSS</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">75%</span>
-              </div>
-            </div>
+
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">JavaScript</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">SASS</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Bootstrap</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">75%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Photoshop</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div><span class="progress-value">70%</span>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
 </div>
 <div class="section" id="experience">
   <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Work Experience</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>March 2016 - Present</p>
-            <div class="h5">CreativeM</div>
+    <div class="h4 text-center mb-4 title">Experiencia</div>
+    @foreach ($experiences as $experience )
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body cc-experience-header">
+              <p>{{$experience->initialdate->format('M y')}} - {{$experience->finaldate->format('M Y')}}</p>
+              <div class="h5">{{$experience->name}}</div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Front End Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2014 - March 2016</p>
-            <div class="h5">WebNote</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Web Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body">
+              <div class="h5">{{$experience->place}}</div>
+              <p>{{$experience->description}}.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2013 - February 2014</p>
-            <div class="h5">WEBM</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Intern</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
 </div>
 <div class="section">
   <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2013 - 2015</p>
-            <div class="h5">Masters Degree</div>
+    <div class="h4 text-center mb-4 title">Educación</div>
+    @foreach ($educations as $education)
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body cc-education-header">
+              <p>{{$education->initialdate->format('M y')}} - {{$education->finaldate->format('M Y')}}</p>
+              <div class="h5">{{$education->degree}}</div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Master of Information Technology</div>
-            <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2009 - 2013</p>
-            <div class="h5">Bachelor's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Bachelor of Computer Science</div>
-            <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body">
+              <div class="h5">{{$education->name}}</div>
+              <p class="category"></p>
+              <p>{{$education->institution}}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2007 - 2009</p>
-            <div class="h5">High School</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Science and Mathematics</div>
-            <p class="category">School of Secondary board</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
 </div>
 <div class="section" id="contact">
@@ -262,37 +170,37 @@
         <div class="row">
           <div class="col-md-9">
             <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
+              <div class="h4 text-center title">Contactame</div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="card-body">
                     <form action="https://formspree.io/your@email.com" method="POST">
-                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
+                      <div class="p pb-3"><strong>Eviame un correo </strong></div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                            <input class="form-control" type="text" name="name" placeholder="Nombre" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
+                            <input class="form-control" type="text" name="Subject" placeholder="Asunto" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
+                            <input class="form-control" type="email" name="_replyto" placeholder="Correo" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                            <textarea class="form-control" name="message" placeholder="Mensaje" required="required"></textarea>
                           </div>
                         </div>
                       </div>
@@ -306,12 +214,12 @@
                 </div>
                 <div class="col-md-6">
                   <div class="card-body">
-                    <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">140, City Center, New York, U.S.A</p>
-                    <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">+1718-111-0011</p>
-                    <p class="mb-0"><strong>Email</strong></p>
-                    <p>anthony@company.com</p>
+                    <p class="mb-0"><strong>Ciudad </strong></p>
+                    <p class="pb-2">{{$user->address}}</p>
+                    <p class="mb-0"><strong>Teléfono</strong></p>
+                    <p class="pb-2">{{$user->phone}}</p>
+                    <p class="mb-0"><strong>Correo</strong></p>
+                    <p>{{$user->address}}</p>
                   </div>
                 </div>
               </div>
@@ -324,8 +232,6 @@
 </div></div>
     </div>
     <footer class="footer">
-      <div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center">Anthony Barnett</div>
       <div class="text-center text-muted">
         <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
       </div>

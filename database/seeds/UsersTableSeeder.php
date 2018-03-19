@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'goz.694@gmail.com',
             'phone' => '9671330492',
             'address' => 'Ciudad de México',
-            'age' => '23',
+            'birthdate' => '1994-06-06',
             'photo' => 'img.jpg'
         ];
 
