@@ -50,16 +50,18 @@
 
 <div id='editar' class="box" style='display:none;'>
 	<div class="section" id="about">
-		<form role="form">
+		<form role="form" method="post" action="{{action('UserController@update',['id' => $user->id])}}">
+			{{csrf_field()}}
+			<input name="_method" type="hidden" value="PUT">
 			<div class="container">
 					<div class="card" data-aos="fade-up" data-aos-offset="10">
 						<div class="row">
 							<div class="col-lg-6 col-md-12">
 							<div class="card-body">
 									<div><label>Nombre</label></div>
-									<input type="text" value="{{$user->name}}">
+									<input type="text" name="name" value="{{$user->name}}">
 								<div><label>Objetivo professional</label></div>
-								<textarea id="editor1" name="editor1" rows="5" cols="80">{{$user->objetive}}</textarea>
+								<textarea id="editor1" name="objetive" rows="5" cols="80">{{$user->objetive}}</textarea>
 							</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
@@ -74,7 +76,7 @@
 												<i class="fa fa-calendar"></i>
 												</div>
 												<div  class="col-lg-9 col-md-12">
-													<input type="text" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+													<input type="text" class="form-control" name="birthdate" value="{{$user->birthdate}}" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
 												</div>
 											</div>
 											<!-- /.input group -->
@@ -82,7 +84,7 @@
 									</div>
 									<div class="row mt-3">
 									<div class="col-sm-4"><label>Email:</label></div>
-									<div class="col-sm-8"><input type="email" value="{{$user->email}}"></div>
+									<div class="col-sm-8"><input type="email" name="email" value="{{$user->email}}"></div>
 									</div>
 									<div class="row mt-3">
 									<div class="col-sm-4"><label>Teléfono:</label></div>
@@ -92,14 +94,14 @@
 												<i class="fa fa-phone"></i>
 											</div>
 											<div class="col-lg-9 col-md-12">
-												<input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask value="{{$user->phone}}">
+												<input type="text" class="form-control" name="phone" data-inputmask='"mask": "(999) 999-9999"' data-mask value="{{$user->phone}}">
 											</div>
 										</div>	
 									</div>
 									</div>
 									<div class="row mt-3">
 									<div class="col-sm-4"><label>Ciudad:</label></div>
-									<div class="col-sm-8"><input type="text" value="{{$user->address}}"></div>
+									<div class="col-sm-8"><input name="address" type="text" value="{{$user->address}}"></div>
 									</div>
 								</div>
 							</div>

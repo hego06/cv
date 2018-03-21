@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -17,7 +18,7 @@ class UserController extends Controller
         $id = 1;
         $user = User::findOrFail($id);
 
-        return view('admin.index', compact('user'));
+        return view('admin.user.index', compact('user'));
     }
 
     /**
@@ -72,7 +73,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->fill($request->all());
+        $user->save();
+
+        return Redirect::to('admin');
     }
 
     /**
