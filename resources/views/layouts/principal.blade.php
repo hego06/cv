@@ -134,7 +134,7 @@
         <!-- Optionally, you can add icons to the links -->
         <li><a href="{{ url('admin') }}"><i class="fa fa-link"></i> <span>Perfil</span></a></li>
         <li><a href="{{ url('education') }}"><i class="fa fa-link"></i> <span>Education</span></a></li>
-        <li><a href="{{ url('education') }}"><i class="fa fa-link"></i> <span>Experiencia</span></a></li>
+        <li><a href="{{ url('experience') }}"><i class="fa fa-link"></i> <span>Experiencia</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
