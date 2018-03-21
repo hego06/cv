@@ -174,7 +174,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="card-body">
-                    <form action="https://formspree.io/your@email.com" method="POST">
+                    <form action="https://formspree.io/goz.694@gmail.com" method="POST">
                       <div class="p pb-3"><strong>Eviame un correo </strong></div>
                       <div class="row mb-3">
                         <div class="col">

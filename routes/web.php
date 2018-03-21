@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'FrontController@index');
-Route::get('admin', 'FrontController@admin');
+Route::get('admin', 'UserController@index');
+Route::resource('education','EducationController');

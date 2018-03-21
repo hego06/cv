@@ -16,7 +16,6 @@ class FrontController extends Controller
 
     function index()
     {
-
         $id = 1;
         $user = User::findOrFail($id);
         $skills = $user->skills()->get()->toArray();
@@ -25,7 +24,8 @@ class FrontController extends Controller
 
         return view('front.index', compact('user','skills','educations','experiences'));
     }
+
     function admin(){
-        return view('admin.starter');
+        return view('admin.index');
     }
 }
