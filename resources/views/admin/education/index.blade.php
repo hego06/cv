@@ -35,64 +35,6 @@
 
 @endsection
 
-@section('modal')
-<div id="editar" class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Quick Example</h3>
-		</div>
-		<!-- /.box-header -->
-		<!-- form start -->
-		
-		<form role="form">
-			<div class="box-body">
-			<div class="form-group">
-				<div class="col-lg-2">
-					<label for="exampleInputEmail1">Grado</label>
-				</div>
-				<div class="col-lg-10">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-lg-2">
-					<label for="exampleInputEmail1">Titulo</label>
-				</div>
-				<div class="col-lg-10">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-lg-2">
-					<label for="exampleInputEmail1">Institucion</label>
-				</div>
-				<div class="col-lg-10">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-lg-2">
-					<label for="exampleInputEmail1">Inicio</label>
-				</div>
-				<div class="col-lg-10">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-lg-2">
-					<label for="exampleInputEmail1">Final</label>
-				</div>
-				<div class="col-lg-10">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				</div>
-			</div>
-			</div>
-			<div class="box-footer">
-			<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-		</form>
-	</div>
-@endsection
-
 <script>
 function mostrar(){
 	document.getElementById('editar').style.display = 'block';

@@ -132,38 +132,9 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li class=" active treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Perfil</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Editar</a></li>
-            <li><a href="#">Ver</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Skills</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Editar</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Experiencia</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Editar</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ url('admin') }}"><i class="fa fa-link"></i> <span>Perfil</span></a></li>
+        <li><a href="{{ url('education') }}"><i class="fa fa-link"></i> <span>Education</span></a></li>
+        <li><a href="{{ url('education') }}"><i class="fa fa-link"></i> <span>Experiencia</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
