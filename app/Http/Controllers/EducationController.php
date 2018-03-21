@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Education;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EducationController extends Controller
 {
@@ -75,7 +76,11 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $education = Education::findOrFail($id);
+        $education->fill($request->all());
+        $education->save();
+
+        return Redirect::to('education');
     }
 
     /**

@@ -13,4 +13,6 @@ class Education extends Model
         'initialdate', 
         'finaldate'
     ];
+
+    protected $fillable = ['degree','name','institution','initialdate','finaldate'];
 }
