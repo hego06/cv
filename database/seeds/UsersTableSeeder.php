@@ -20,7 +20,8 @@ class UsersTableSeeder extends Seeder
             'phone' => '9671330492',
             'address' => 'Ciudad de México',
             'birthdate' => '1994-06-06',
-            'photo' => 'img.jpg'
+            'photo' => 'img.jpg',
+            'password' => Hash::make('12345')
         ];
 
         User::create($user);

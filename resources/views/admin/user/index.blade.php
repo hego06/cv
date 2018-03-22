@@ -23,14 +23,17 @@
 							<div class="col-sm-4"><strong class="text-uppercase">Fecha de nacimiento:</strong></div>
 							<div class="col-sm-8">{{$user->birthdate->toDateString()}}</div>
 							</div>
+							<p></p>
 							<div class="row mt-3">
 							<div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
 							<div class="col-sm-8">{{$user->email}}</div>
 							</div>
+							<p></p>
 							<div class="row mt-3">
 							<div class="col-sm-4"><strong class="text-uppercase">Teléfono:</strong></div>
 							<div class="col-sm-8">{{$user->phone}}</div>
 							</div>
+							<p></p>
 							<div class="row mt-3">
 							<div class="col-sm-4"><strong class="text-uppercase">Ciudad:</strong></div>
 							<div class="col-sm-8">{{$user->address}}</div>

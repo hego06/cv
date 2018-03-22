@@ -36,7 +36,7 @@
 	<div class="box-body">
 		<div class="form-group">
 			<label for="level">Nivel</label>
-			<input type="numeric" class="form-control" id="level" name="level" placeholder="Escribe el nivel de dominio de esta tecnologia">
+			<input type="number" class="form-control" id="level" name="level" placeholder="Escribe el nivel de dominio de esta tecnologia" required>
 			<input type="hidden" id="id" name="id" value="">
 		</div>
 
@@ -49,9 +49,8 @@
 @endsection
 
 <script>
-	function mostrar(btn)
-	{
-		console.log(btn.name);
-		$("#id").val(btn.name);
-	}
+function mostrar(btn)
+{
+	$("#id").val(btn.name);
+}
 </script>
