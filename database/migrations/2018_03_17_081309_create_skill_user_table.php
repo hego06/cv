@@ -14,6 +14,7 @@ class CreateSkillUserTable extends Migration
     public function up()
     {
         Schema::create('skill_user', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('skill_id')->unsigned();
             $table->integer('level');

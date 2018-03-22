@@ -67,12 +67,6 @@
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
-            </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
@@ -103,38 +97,13 @@
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
-      <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="{{ url('admin') }}"><i class="fa fa-link"></i> <span>Perfil</span></a></li>
-        <li><a href="{{ url('education') }}"><i class="fa fa-link"></i> <span>Education</span></a></li>
-        <li><a href="{{ url('experience') }}"><i class="fa fa-link"></i> <span>Experiencia</span></a></li>
+        <li><a href="{{ url('admin') }}"><i class="fa fa-user-circle"></i> <span>Perfil</span></a></li>
+        <li><a href="{{ url('education') }}"><i class="fa fa-book"></i> <span>Education</span></a></li>
+        <li><a href="{{ url('experience') }}"><i class="fa fa-briefcase"></i> <span>Experiencia</span></a></li>
+        <li><a href="{{ url('skill') }}"><i class="fa fa-wrench"></i> <span>Skill</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -182,16 +151,12 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Default Modal</h4>
+          <h4 class="modal-title">Editar</h4>
         </div>
         <div class="modal-body">
             @section('modal')
               This is the master sidebar.
             @show
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
       <!-- /.modal-content -->

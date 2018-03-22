@@ -15,3 +15,4 @@ Route::get('/', 'FrontController@index');
 Route::resource('admin', 'UserController');
 Route::resource('education','EducationController');
 Route::resource('experience','ExperienceController');
+Route::resource('skill','UserSkillController');

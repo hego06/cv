@@ -39,7 +39,7 @@
       <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/anthony.jpg" alt="Image"/></a></div>
+          <div class="cc-profile-image"><a href="#"><img src="images/{{$user->photo}}" alt="Image"/></a></div>
           <div class="h2 title">{{$user->name}}</div>
           <p class="category text-white">Web Developer</p>
           <a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
@@ -47,7 +47,11 @@
       </div>
       <div class="section">
         <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></div>
+          <div class="button-container">
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/zenaidoh1" rel="tooltip" title="Sigueme en Facebook"><i class="fa fa-facebook"></i></a>
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://twitter.com/zenaidohg" rel="tooltip" title="Sigueme en Twitter"><i class="fa fa-twitter"></i></a>
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/zenaido_hernandez/?hl=es-la" rel="tooltip" title="Sigueme en Instagram"><i class="fa fa-instagram"></i></a>
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/hego06" rel="tooltip" title="Mira mis repositorio en GitHub"><i class="fa fa-github"></i></a></div>
         </div>
       </div>
     </div>
@@ -214,11 +218,11 @@
                 </div>
                 <div class="col-md-6">
                   <div class="card-body">
-                    <p class="mb-0"><strong>Ciudad </strong></p>
-                    <p class="pb-2">{{$user->address}}</p>
+                    <p class="mb-0"><strong>Correo </strong></p>
+                    <p class="pb-2">{{$user->email}}</p>
                     <p class="mb-0"><strong>Teléfono</strong></p>
                     <p class="pb-2">{{$user->phone}}</p>
-                    <p class="mb-0"><strong>Correo</strong></p>
+                    <p class="mb-0"><strong>Ciudad</strong></p>
                     <p>{{$user->address}}</p>
                   </div>
                 </div>

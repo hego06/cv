@@ -24,7 +24,6 @@
 			<td>{{$experience->finaldate->toDateString()}}</td>
 			<td>
 				{!!link_to_route('experience.edit', $title ='Editar', $parameters = $experience->id, $attributes = ['class' =>'btn btn-primary']);!!}
-				<button type="button" class="btn btn-primary"  onclick="mostrar()">Eliminar</button>
 			</td>
 		</tr>
 		@endforeach
