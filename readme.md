@@ -7,7 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Aplicacion realizada en laravel 5.6, para un CV online y con panel de administracíon básico con AdminLTE
+## CV online
+
+<p>Aplicacion realizada en laravel 5.6, para un CV online y con panel de administracíon básico con AdminLTE</p>
 
 https://znhgcurriculum.000webhostapp.com/
 
