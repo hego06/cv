@@ -30,7 +30,7 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.experience.create');
     }
 
     /**
@@ -41,7 +41,21 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name' => 'required',
+            'place'=> 'required',
+            'description' => 'required',
+            'initialdate' => 'required',
+            'finaldate' => 'required'
+        ];
+
+        $data = $this->validate($request, $rules);
+
+        $data['user_id'] = Auth()->User()->id;
+        
+        Experience::create($data);
+
+        return redirect()->route('experience.index')->withFlash('Nuevo registro agregado');
     }
 
     /**
@@ -90,8 +104,11 @@ class ExperienceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Experience $experience)
     {
-        //
+        
+        $experience->delete();
+
+        return redirect()->route('experience.index')->withFlash('El registro ha sido eliminado');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.principal');
+@extends('layouts.principal')
 @section('title')
 	<h1>Datos personales</h1>
 @endsection
@@ -85,13 +85,13 @@
 											<!-- /.input group -->
 										</div>
 									</div>
-									<div class="row mt-3">
-									<div class="col-sm-4"><label>Email:</label></div>
-									<div class="col-sm-8"><input type="email" name="email" value="{{$user->email}}"></div>
+									<div class="row">
+									<div class="col-md-4"><label>Email:</label></div>
+									<div class="col-md-8"><input type="email" name="email" value="{{$user->email}}"></div>
 									</div>
-									<div class="row mt-3">
-									<div class="col-sm-4"><label>Teléfono:</label></div>
-									<div class="col-sm-8">
+									<div class="row">
+									<div class="col-md-4"><label>Teléfono:</label></div>
+									<div class="col-md-8">
 										<div class="input-group">
 											<div class="input-group-addon">
 												<i class="fa fa-phone"></i>
@@ -102,9 +102,9 @@
 										</div>	
 									</div>
 									</div>
-									<div class="row mt-3">
-									<div class="col-sm-4"><label>Ciudad:</label></div>
-									<div class="col-sm-8"><input name="address" type="text" value="{{$user->address}}"></div>
+									<div class="row">
+									<div class="col-md-4"><label>Ciudad:</label></div>
+									<div class="col-md-8"><input name="address" type="text" value="{{$user->address}}"></div>
 									</div>
 								</div>
 							</div>

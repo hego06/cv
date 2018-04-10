@@ -1,21 +1,23 @@
-@extends('layouts.principal');
+@extends('layouts.principal')
 @section('title')
-	<h1>Educacion</h1>
+	<h1>Educación</h1>
 @endsection
 @section('content')
-@foreach ($educations as $education)
 <div class="box">
-	<!-- /.box-header -->
+	<div class="box-header">
+        <a href="{{route('education.create')}}" class="btn btn-info pull-right"> <i class="fa fa-plus"></i> Nuevo</a>
+    </div>
 	<div class="box-body no-padding">
 		<table class="table table-striped">
 		<tr>
 			<th>Grado</th>
-			<th>Titulo</th>
+			<th>Título</th>
 			<th>Institución</th>
-			<th>Inincio</th>
+			<th>Inicio</th>
 			<th>Final</th>
 			<th>Acciones</th>
 		</tr>
+		@foreach ($educations as $education)
 		<tr>
 			<td>{{$education->degree}}</td>
 			<td><p>{{$education->name}}</p></td>
@@ -23,15 +25,17 @@
 			<td>{{$education->initialdate->toDateString()}}</td>
 			<td>{{$education->finaldate->toDateString()}}</td>
 			<td>
-				{!!link_to_route('education.edit', $title ='Editar', $parameters = $education->id, $attributes = ['class' =>'btn btn-primary']);!!}
-				<button type="button" class="btn btn-primary"  onclick="mostrar()">Eliminar</button>
-			</td>
+				<a href="{{route('education.edit', $education)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+				<form method="POST" action="{{route('education.destroy', $education)}}" style="display:inline">
+					{{csrf_field()}} {{method_field('delete')}}
+					<button class="btn btn-xs btn-danger" onClick="return confirm('Estas seguro que deseas eliminar este recurso?')"><i class="fa fa-times"></i></button>
+				</form>
 		</tr>
+		@endforeach
 		</table>
 	</div>
 	<!-- /.box-body -->
 </div>
-@endforeach
 
 @endsection
 

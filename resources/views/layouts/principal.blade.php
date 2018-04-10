@@ -48,12 +48,10 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <li class="dropdown user user-menu">
             <form method="POST" action="{{route('logout')}}">
                 {{csrf_field()}}
-                  <span><button class="btn btn-danger">Salir</button></span>
+                  <span><button class="btn btn-danger navbar-toggler">Salir</button></span>
             </form>
-          </li>
         </ul>
       </div>
     </nav>
@@ -86,7 +84,9 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-
+      @if(session()->has('flash'))
+        <div class="alert alert-success">{{session('flash')}}</div>
+      @endif
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
@@ -159,6 +159,14 @@
 
       $('[data-mask]').inputmask()
     })
+
+  $(document).ready(function () {
+    $(".alert").fadeTo(1000, 500).slideUp(500, function(){
+    $(".alert").alert('close');
+});
+ 
+});
+
   </script>
 
 </body>

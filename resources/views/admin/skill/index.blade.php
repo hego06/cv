@@ -1,6 +1,6 @@
-@extends('layouts.principal');
+@extends('layouts.principal')
 @section('title')
-	<h1>Experiencia</h1>
+	<h1>Skills</h1>
 @endsection
 @section('content')
 <div class="box">

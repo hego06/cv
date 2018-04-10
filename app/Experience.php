@@ -10,7 +10,7 @@ class Experience extends Model
     public $timestamps = false;
 
     protected $fillable =[
-        'name','place','description','initialdate','finaldate'
+        'name','place','description','initialdate','finaldate','user_id'
     ];
 
     protected $dates = [

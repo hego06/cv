@@ -1,4 +1,4 @@
-@extends('layouts.principal');
+@extends('layouts.principal')
 @section('title')
 	<h1>Educacion</h1>
 @endsection

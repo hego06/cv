@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Education;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class EducationController extends Controller
@@ -16,7 +17,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        $id=1;
+        $id = Auth::user()->id;
         $user = User::findOrFail($id);
         $educations = $user->educations()->get();
 
@@ -30,7 +31,7 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.education.create');
     }
 
     /**
@@ -41,7 +42,22 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'degree' => 'required',
+            'name' => 'required',
+            'institution' => 'required',
+            'initialdate' => 'required',
+            'finaldate' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+        $education = new Education;
+        $education->fill($request->all());
+        $education->user_id = Auth::user()->id;
+
+        $education->save();
+
+        return redirect()->route('education.index')->withFlash('Nuevo registro agregado');
     }
 
     /**
@@ -89,8 +105,9 @@ class EducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Education $education)
     {
-        //
+        $education->delete();
+        return back()->with('flash','El registro ha sido eliminado');
     }
 }
