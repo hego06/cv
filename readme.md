@@ -10,6 +10,7 @@
 ## CV online
 
 <p>Aplicacion realizada en laravel 5.6, para un CV online y con panel de administracíon básico con AdminLTE</p>
+
 ## FRONT 
 https://znhgcurriculum.000webhostapp.com/
 
